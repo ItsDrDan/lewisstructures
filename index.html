@@ -1050,7 +1050,7 @@ const requestedCourse=new URLSearchParams(location.search).get('course');if(['1A
   bonds.forEach(b=>{if(LS.has(b.a)&&LS.has(b.b)){const A=atoms.find(a=>a.id===b.a),B=atoms.find(a=>a.id===b.b);if(A&&B)under+=`<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#9fd0f2" stroke-width="16" stroke-linecap="round" opacity=".7"/>`}});
   atoms.forEach(a=>{if(LS.has(a.id))under+=`<circle cx="${a.x}" cy="${a.y}" r="${r}" fill="#d6ecfb" stroke="#3b8ccb" stroke-width="2.2"/>`});
   if(under)svg.insertAdjacentHTML('afterbegin',`<g class="lasso-sel" pointer-events="none">${under}</g>`);
-  if(LP&&LP.length>1)svg.insertAdjacentHTML('beforeend',`<polygon pointer-events="none" points="${LP.map(q=>q.x.toFixed(1)+','+q.y.toFixed(1)).join(' ')}" fill="#4a9fd61f" stroke="#3b8ccb" stroke-width="2.4" stroke-dasharray="8 6" stroke-linejoin="round"/>`);
+  if(LP&&LP.length>1)svg.insertAdjacentHTML('beforeend',`<polygon pointer-events="none" points="${LP.map(q=>q.x.toFixed(1)+','+q.y.toFixed(1)).join(' ')}" fill="#287bb11f" stroke="#3b8ccb" stroke-width="2.4" stroke-dasharray="8 6" stroke-linejoin="round"/>`);
   const wrap=svg.closest('.canvas-wrap');if(!wrap)return;let bar=wrap.querySelector(':scope > .lasso-bar');
   if(!bar){bar=document.createElement('div');bar.className='lasso-bar';bar.setAttribute('aria-live','polite');wrap.prepend(bar)}
   if(!LS.size){bar.className='lasso-bar';bar.innerHTML='';return}
